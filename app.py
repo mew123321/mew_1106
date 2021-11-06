@@ -147,10 +147,11 @@ def aqi_chart_24h():
 	time_list = list()
     for item in data:
         aqi_list.append( float(item['aqi']) )
-		time_list.append( item['item'])
+		time_list.append( item['item'][5:13])
 		
     # plot
     plt.plot(time_list, aqi_list)
+	plt.xticks(stock_date[0::10], rotation=90)
     plt.grid()
     plt.savefig('img.png')
     plt.close()
