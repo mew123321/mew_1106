@@ -80,7 +80,7 @@ def aqi_data():
     if not sid:
         return jsonify({'result':'NG', 'log':'sid miss'})
 
-    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
+    mysql_db_url = 'mysql+pymysql://user1:ji3g4user1@206.189.86.205:32769/testdb'
     my_db = create_engine(mysql_db_url)
     resultProxy=my_db.execute("select * from malo_1030_aqi_table2 where uuid='%s' ORDER BY time ASC" %(sid) )
     data = resultProxy.fetchall()
@@ -103,7 +103,7 @@ def aqi_data_24h():
     tm_start = dt1.strftime("%Y/%m/%d %H:%M:%S")
     tm_end = dt2.strftime("%Y/%m/%d %H:%M:%S")
     
-    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
+    mysql_db_url = 'mysql+pymysql://user1:ji3g4user1@206.189.86.205:32769/testdb'
     my_db = create_engine(mysql_db_url)
     sql_cmd = "select * from malo_1030_aqi_table2 where uuid='%s' and time>'%s' and time<='%s' ORDER BY time ASC" %(sid, tm_start, tm_end)
     print(sql_cmd)
@@ -130,7 +130,7 @@ def aqi_chart_24h():
     tm_start = dt1.strftime("%Y/%m/%d %H:%M:%S")
     tm_end = dt2.strftime("%Y/%m/%d %H:%M:%S")
     
-    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
+    mysql_db_url = 'mysql+pymysql://user1:ji3g4user1@206.189.86.205:32769/testdb'
     my_db = create_engine(mysql_db_url)
     sql_cmd = "select * from malo_1030_aqi_table2 where uuid='%s' and time>'%s' and time<='%s' ORDER BY time ASC" %(sid, tm_start, tm_end)
     print(sql_cmd)
@@ -179,7 +179,7 @@ def job_function2():
 
 #- 空污資料收集
 def job_function3():
-    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
+    mysql_db_url = 'mysql+pymysql://user1:ji3g4user1@206.189.86.205:32769/testdb'
     my_db = create_engine(mysql_db_url)
 
     # check and create table
