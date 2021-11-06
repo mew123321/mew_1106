@@ -133,7 +133,7 @@ def aqi_chart_24h():
     tm_start = dt1.strftime("%Y/%m/%d %H:%M:%S")
     tm_end = dt2.strftime("%Y/%m/%d %H:%M:%S")
     
-    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
+    mysql_db_url = 'mysql+pymysql://nx88xtmr79du2cf0:loeezkijmuf1dxuw@l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zenb8newwu7zziuy'
     my_db = create_engine(mysql_db_url)
     sql_cmd = "select * from malo_1030_aqi_table2 where uuid='%s' and time>'%s' and time<='%s' ORDER BY time ASC" %(sid, tm_start, tm_end)
     print(sql_cmd)
