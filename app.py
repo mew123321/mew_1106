@@ -34,7 +34,7 @@ app = Flask(__name__, static_url_path='', static_folder='static')
 
 @app.route("/", methods=['GET'])
 def basic_url():
-    return 'hello'
+    return app.send_static_file('ex1/index.html')
 
 @app.route("/hello", methods=['GET'])
 def hello():
