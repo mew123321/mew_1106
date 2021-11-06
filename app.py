@@ -2,6 +2,9 @@
 #------------------------
 # v2021-11-01   1.W06, DB + web api
 #               2. plot chart
+# v2021-11-02   1. TODO: 加入 https://startbootstrap.com/themes 中的範本
+#                   ex1: https://startbootstrap.com/theme/business-casual
+#                   ex2: https://startbootstrap.com/theme/sb-admin-2
 #========================
 
 from flask import Flask, request, abort, render_template, Response
@@ -23,10 +26,6 @@ import time, datetime
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
-import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
-font = FontProperties(fname=r"NotoSansTC-Regular.otf", size=14)
 
 IS_LOCAL = 0
 
@@ -142,13 +141,11 @@ def aqi_chart_24h():
     data = resultProxy.fetchall()
 
     aqi_list = list()
-	aqi_list_time = list()
     for item in data:
         aqi_list.append( float(item['aqi']) )
-		aqi_list_time.append( font(item['time']))
 
     # plot
-    plt.plot(aqi_list_time, aqi_list)
+    plt.plot(aqi_list)
     plt.grid()
     plt.savefig('img.png')
     plt.close()
