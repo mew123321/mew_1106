@@ -27,6 +27,10 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+font = FontProperties(fname=r"NotoSansTC-Regular.otf", size=14)
+
 IS_LOCAL = 0
 
 app = Flask(__name__, static_url_path='', static_folder='static')
