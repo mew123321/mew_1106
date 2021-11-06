@@ -27,7 +27,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 font = FontProperties(fname=r"NotoSansTC-Regular.otf", size=14)
 
@@ -145,9 +144,11 @@ def aqi_chart_24h():
     data = resultProxy.fetchall()
 
     aqi_list = list()
+	aqi_list_time = list()
     for item in data:
         aqi_list.append( float(item['aqi']) )
-
+		aqi_list_time.append(time['time')
+		
     # plot
     plt.plot(aqi_list)
     plt.grid()
