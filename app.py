@@ -2,9 +2,6 @@
 #------------------------
 # v2021-11-01   1.W06, DB + web api
 #               2. plot chart
-# v2021-11-02   1. TODO: 加入 https://startbootstrap.com/themes 中的範本
-#                   ex1: https://startbootstrap.com/theme/business-casual
-#                   ex2: https://startbootstrap.com/theme/sb-admin-2
 #========================
 
 from flask import Flask, request, abort, render_template, Response
